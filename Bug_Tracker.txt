@@ -1,0 +1,80 @@
+Bug Tracking System
+
+What is Bug tracking system? 
+A bug tracking system is software that keeps track of bugs that the user encountered in any software development or in any project.
+
+Create a New Bug: This function will ask the user for his name, and create a new text file as a name with the id number attached to it.
+
+For Example:
+
+If the user creating a bug file for the first time id which is initially 0 incremented by 1 and if the user enters name as bugfile then the file that our program will create will be named as bugfile1.txt 
+If the user creating a bug file for the 3rd time id incremented by 1 three times and if the user enters the name as bugfile again then the file that our program will create will be named as bugfile3.txt
+After naming the file, Take the information from the user and add it to the text file with the time of creation attached to it 
+
+The information is taken by a user for a bug is:
+
+Bug Filed by User.
+Bug Type
+Bug Priority
+Bug Description
+Bug Status
+
+Change Status of Bug: Take the information about the bug and change the status of the bug in the desired file. Also, update the Last Updated Time of the Bug.
+
+Report a Bug: Take the information about the bug. Such as Bug file name and print the contents of the Bug.
+
+Below is the implementation of the Bug Tracking System:
+
+// C program for the Driver Function
+// of the Bug Tracking System
+
+#include <stdio.h>
+
+// Driver Code
+void main()
+{
+	printf("***************");
+	printf("BUG TRACKING SYSTEM");
+	printf("***************\n");
+
+	int number, i = 1;
+
+	// Id initialised to 0
+	int id = 0;
+
+	// while loop to run
+	while (i != 0) {
+		printf("\n1. FILE A NEW BUG\n");
+		printf("2. CHANGE THE STATUS OF THE BUG\n");
+		printf("3. GET BUG REPORT\n4. EXIT");
+		printf("\n\n ENTER YOUR CHOICE:");
+
+		scanf("%d", &number);
+
+		// Using switch to go case by case
+		switch (number) {
+		case 1:
+			id++;
+
+			// Creating a New Bug
+			filebug(id);
+			break;
+		case 2:
+
+			// Change Status of Bug
+			changestatus();
+			break;
+		case 3:
+
+			// Report the Bug
+			report();
+			break;
+		case 4:
+			i = 0;
+			break;
+		default:
+			printf("\ninvalid entry");
+			break;
+		}
+	}
+}
